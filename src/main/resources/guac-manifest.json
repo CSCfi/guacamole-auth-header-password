@@ -1,0 +1,8 @@
+{
+   "guacamoleVersion":"1.3.0",
+   "name":"Sensitive Data Services HTTP Header Password Authentication Extension",
+   "namespace":"fi:csc:sds:guac-headerpassword",
+   "authProviders":[
+      "fi.csc.sds.guacamole.auth.headerpassword.HTTPHeaderPasswordAuthenticationProvider"
+   ]
+}
