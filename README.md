@@ -5,7 +5,6 @@ Guacamole authentication extension as described in [https://guacamole.apache.org
 Authentication Extension that expects user's username and password to be located in http headers. If header for both username and password is located user is logged in. The username and password are populated to {$GUAC_USERNAME} and {$GUAC_PASSWORD} for creating connection to VM.   
 
 # Build
-    git clone ssh://git@gitlab.ci.csc.fi:10022/sds-dev/guacamole-auth-header-password.git
     cd guacamole-auth-header-password
     mvn package
     
