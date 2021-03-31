@@ -57,11 +57,16 @@ public class AuthenticatedUser extends AbstractAuthenticatedUser {
      * @param credentials provided credentials
      */
     public void init(String username, String password, Credentials credentials) {
-        log.debug("Initialising user with username {} and password {}", username, password);
+        log.debug("Initialising user with username {} and password {}", username, password);
         creds = credentials;
         setIdentifier(username);
-        creds.setUsername(username);
-        creds.setPassword(password);
+        // For GUAC_USERNAME we remove the possible scope
+        if (username != null) {
+            creds.setUsername(username.split("@")[0]);
+        }
+        if (password != null) {
+            creds.setPassword(password);
+        }
     }
 
     /** {@inheritDoc} */
