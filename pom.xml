@@ -7,7 +7,7 @@
   <groupId>fi.csc.sds</groupId>
   <artifactId>guacamole-auth-header-password</artifactId>
   <packaging>jar</packaging>
-  <version>1.1.0</version>
+  <version>1.2.0</version>
   <name>guacamole-auth-header-password</name>
   
   <properties>
