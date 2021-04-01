@@ -2,13 +2,13 @@
 Guacamole authentication extension as described in [https://guacamole.apache.org/doc/gug/custom-auth.html](https://guacamole.apache.org/doc/gug/custom-auth.html). The extension is for guacamole version 1.3.0.
 
 # Overview
-Authentication Extension that expects user's username and password to be located in http headers. If header for both username and password is located user is logged in. The username and password are populated to {$GUAC_USERNAME} and {$GUAC_PASSWORD} for creating connection to VM.   
+Authentication Extension that expects user's username and password to be located in http headers. If header for both username and password is located user is logged in. The username and password are populated to {$GUAC_USERNAME} and {$GUAC_PASSWORD} for creating connection to VM. Username populated to {$GUAC_USERNAME} is sanitized by removing any possible domain delimited by '@' and shortening  the result to maximum length of 32.    
 
 # Build
     cd guacamole-auth-header-password
     mvn package
     
-The output is target/guacamole-auth-header-password-1.1.0.jar
+The output is target/guacamole-auth-header-password-1.2.0.jar
 # Installing HTTP header password authentication
 
 The extension guacamole-auth-header-password-1.1.0.jar must be copied to GUACAMOLE_HOME/extensions directory. 
