@@ -50,7 +50,8 @@ public class AuthenticatedUser extends AbstractAuthenticatedUser {
 
     /**
      * Initialises the authenticated user with provided username, password and
-     * credentials.
+     * credentials. Username is sanitised for login credential by stripping away 
+     * '@' - delimited domain and then cutting the length to 32 characters.
      * 
      * @param username    provided username
      * @param password    provided password
@@ -62,7 +63,11 @@ public class AuthenticatedUser extends AbstractAuthenticatedUser {
         setIdentifier(username);
         // For GUAC_USERNAME we remove the possible scope
         if (username != null) {
-            creds.setUsername(username.split("@")[0]);
+            String loginUsername=username.split("@")[0];
+            if (loginUsername.length() > 32) {
+                loginUsername = loginUsername.substring(0, 32);
+            }
+            creds.setUsername(loginUsername);
         }
         if (password != null) {
             creds.setPassword(password);

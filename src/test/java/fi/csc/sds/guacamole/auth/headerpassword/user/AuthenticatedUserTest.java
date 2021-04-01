@@ -55,9 +55,9 @@ public class AuthenticatedUserTest {
 
     @Test
     public void testSuccess() {
-        user.init("username@domain", "password", credentials);
-        Assert.assertEquals("username@domain", user.getIdentifier());
-        Assert.assertEquals("username", credentials.getUsername());
+        user.init("username123456789123456789123456789123456789123456789123456789@domain", "password", credentials);
+        Assert.assertEquals("username123456789123456789123456789123456789123456789123456789@domain", user.getIdentifier());
+        Assert.assertEquals("username123456789123456789123456", credentials.getUsername());
         Assert.assertEquals("password", credentials.getPassword());
         Assert.assertNotNull(user.getAuthenticationProvider());
     }
