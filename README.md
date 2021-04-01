@@ -11,10 +11,10 @@ Authentication Extension that expects user's username and password to be located
 The output is target/guacamole-auth-header-password-1.2.0.jar
 # Installing HTTP header password authentication
 
-The extension guacamole-auth-header-password-1.1.0.jar must be copied to GUACAMOLE_HOME/extensions directory. 
+The extension guacamole-auth-header-password-1.2.0.jar must be copied to GUACAMOLE_HOME/extensions directory. 
 
 1. Create the GUACAMOLE_HOME/extensions directory, if it does not already exist.
-2. Copy guacamole-auth-header-password-1.1.0.jar to GUACAMOLE_HOME/extensions.
+2. Copy guacamole-auth-header-password-1.2.0.jar to GUACAMOLE_HOME/extensions.
 
 By default the extension assumes users username is carried in header named OIDC_REMOTE_USER and password in header named OIDC_access_token. If you use different headers you need to configure that in guacamole.properties. 
 
