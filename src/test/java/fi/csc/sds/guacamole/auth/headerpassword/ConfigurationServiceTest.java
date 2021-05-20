@@ -49,6 +49,8 @@ public class ConfigurationServiceTest {
                 Mockito.eq("OIDC_REMOTE_USER"));
         Mockito.doReturn("OIDC_access_token").when(environment).getProperty(Mockito.any(),
                 Mockito.eq("OIDC_access_token"));
+        Mockito.doReturn("OIDC_CLAIM_sdDesktopProjects").when(environment).getProperty(Mockito.any(),
+                Mockito.eq("OIDC_CLAIM_sdDesktopProjects"));
         injector.injectMembers(this);
     }
 
@@ -56,5 +58,6 @@ public class ConfigurationServiceTest {
     public void testSuccess() throws GuacamoleException {
         Assert.assertEquals("OIDC_REMOTE_USER", configuration.getUsername());
         Assert.assertEquals("OIDC_access_token", configuration.getPassword());
+        Assert.assertEquals("OIDC_CLAIM_sdDesktopProjects", configuration.getGroups());
     }
 }

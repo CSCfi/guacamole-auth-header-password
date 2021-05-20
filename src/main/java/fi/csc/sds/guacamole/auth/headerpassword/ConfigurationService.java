@@ -52,4 +52,14 @@ public class ConfigurationService {
     public String getPassword() throws GuacamoleException {
         return environment.getProperty(HTTPHeaderPasswordGuacamoleProperties.HTTP_PASSWORD_HEADER, "OIDC_access_token");
     }
+
+    /**
+     * Get name of the header carrying groups.
+     *
+     * @return name of the header carrying groups.
+     * @throws GuacamoleException if something unexpected happens.
+     */
+    public String getGroups() throws GuacamoleException {
+        return environment.getProperty(HTTPHeaderPasswordGuacamoleProperties.HTTP_GROUPS_HEADER, "OIDC_CLAIM_sdDesktopProjects");
+    }
 }

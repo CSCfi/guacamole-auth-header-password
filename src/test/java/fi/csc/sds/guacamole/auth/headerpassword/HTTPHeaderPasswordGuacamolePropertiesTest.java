@@ -28,5 +28,6 @@ public class HTTPHeaderPasswordGuacamolePropertiesTest {
     public void testSuccess() throws GuacamoleException {
         Assert.assertEquals("http-username-header", HTTPHeaderPasswordGuacamoleProperties.HTTP_USERNAME_HEADER.getName());
         Assert.assertEquals("http-password-header", HTTPHeaderPasswordGuacamoleProperties.HTTP_PASSWORD_HEADER.getName());
+        Assert.assertEquals("http-groups-header", HTTPHeaderPasswordGuacamoleProperties.HTTP_GROUPS_HEADER.getName());
     }
 }

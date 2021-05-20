@@ -80,7 +80,10 @@ public class AuthenticationProviderService {
             throw new GuacamoleInvalidCredentialsException(
                     "Invalid login. Headers not containing necessary information", CredentialsInfo.USERNAME_PASSWORD);
         }
-        log.info("User {} authenticated", authenticatedUser.getCredentials().getUsername());
+        request.setAttribute("fi.csc.sds.guacamole.auth.headerpassword.groups",
+                request.getHeader(configuration.getGroups()));
+        log.info("User {} with groups {} authenticated", authenticatedUser.getCredentials().getUsername(),
+                request.getAttribute("fi.csc.sds.guacamole.auth.headerpassword.groups"));
         return authenticatedUser;
     }
 }

@@ -51,4 +51,14 @@ public class HTTPHeaderPasswordGuacamoleProperties {
             return "http-password-header";
         }
     };
+
+    /**
+     * Header name for groups.
+     */
+    public static final StringGuacamoleProperty HTTP_GROUPS_HEADER = new StringGuacamoleProperty() {
+        @Override
+        public String getName() {
+            return "http-groups-header";
+        }
+    };
 }
